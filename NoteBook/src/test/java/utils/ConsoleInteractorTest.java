@@ -13,12 +13,12 @@ public class ConsoleInteractorTest extends OutputTest {
     public void readCommand() throws Exception {
         ByteArrayInputStream in = new ByteArrayInputStream("Test".getBytes());
         System.setIn(in);
-        Assert.assertEquals(this.string+"\n",consoleInteractor.readCommand());
+        Assert.assertEquals(this.string+"\r\n",consoleInteractor.readCommand());
     }
 
     @Test
     public void print() throws Exception {
         consoleInteractor.print(this.string);
-        Assert.assertEquals(this.string+"\n", output.toString());
+        Assert.assertEquals(this.string+"\r\n", output.toString());
     }
 }
